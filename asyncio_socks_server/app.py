@@ -55,10 +55,10 @@ class SocksServer:
             )
 
         logger.info(
-            f"Server launched on" f" {self.config.LISTEN_HOST,self.config.LISTEN_PORT}"
+            f"服务运行在" f" {self.config.LISTEN_HOST,self.config.LISTEN_PORT}"
         )
 
         self.loop.run_forever()
         self.loop.close()
 
-        logger.info("Server stopped")
+        logger.info("服务停止")

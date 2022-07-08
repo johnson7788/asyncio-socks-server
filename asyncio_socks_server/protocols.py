@@ -169,7 +169,7 @@ class LocalTCP(asyncio.Protocol):
                     self.gen_reply(SocksRep.ADDRESS_TYPE_NOT_SUPPORTED)
                 )
                 raise NoAtypAllowed(f"Received unsupported ATYP value: {ATYP}")
-            DST_PORT = int.from_bytes(await self.stream_reader.readexactly(2), "big")
+            DST_PORT = int.from_bytes(await self.stream_reader.readexactly(2), "big")  #客户端访问的网站的端口,DST_ADDR是客户端访问网站的ip地址
 
             # Step 2.2
             # The server handles the command and returns a reply.
